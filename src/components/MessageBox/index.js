@@ -11,6 +11,7 @@ class MessageBox extends Component {
 
   componentWillReceiveProps(newProps) {
     this.setState({messages: newProps.messages});
+    console.log(newProps.messages)
   }
 
   render() {

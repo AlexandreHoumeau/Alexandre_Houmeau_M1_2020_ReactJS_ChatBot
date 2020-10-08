@@ -1,4 +1,4 @@
-module.export = [
+const Bot = [
   {
     id: "1",
     name: "Bot1",
@@ -38,3 +38,5 @@ module.export = [
     ]
   }
 ];
+
+export default Bot;
