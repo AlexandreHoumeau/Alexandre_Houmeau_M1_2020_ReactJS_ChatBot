@@ -19,18 +19,20 @@ class Input extends Component {
   handleSubmit = (e) => {
     const { text } = this.state;
     e.preventDefault()
-    this.props.getMessage(text)
-    this.setState({text: ""})
+    if (text.length > 0) {
+      this.props.getMessage(text)
+      this.setState({text: ""})
+    }
   }
   render() {
     const { text } = this.state;
     return (
       <form onSubmit={(value) => {this.handleSubmit(value)}} autoComplete="off">
         <Grid container>
-          <Grid xs={9}>
+          <Grid item xs={9}>
             <TextField fullWidth onChange={(value) => {this.onChangeText(value)}} value={text} id="standard-basic" label="Standard" />
           </Grid>
-          <Grid xs={3}>
+          <Grid item xs={3}>
             <Button onClick={(value) => {this.handleSubmit(value)}}  variant="contained" color="primary">
               Primary
             </Button>
