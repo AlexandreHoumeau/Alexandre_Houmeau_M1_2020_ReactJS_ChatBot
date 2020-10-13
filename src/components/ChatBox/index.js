@@ -15,7 +15,6 @@ class ChatBox extends Component {
     }
     this.getMessage = this.getMessage.bind(this)
     this.botMessage = this.botMessage.bind(this)
-
   }
 
   findActions(bot, value) {
@@ -37,7 +36,6 @@ class ChatBox extends Component {
 
   botMessage(bot, message) {
     const { id, avatar, name } = bot;
-    const { messageArray } = this.state;
     const newMessage = {
       id: id,
       avatar,
@@ -49,8 +47,8 @@ class ChatBox extends Component {
 
     setTimeout(() => {
       this.concatMessages(newMessage)
+      this.props.getMessage(newMessage)
     }, 1000)
-
   }
 
   concatMessages(newMessage) {
@@ -58,12 +56,10 @@ class ChatBox extends Component {
     this.setState({
       messageArray: messageArray.concat(newMessage)
     })
-    
   }
 
   getMessage(message) {
     this.botResponse(message)
-    const { messageArray } = this.state;
     const newMessage = {
       id: Math.floor(Math.random() * Math.floor(1000)),
       content: message,
@@ -71,9 +67,6 @@ class ChatBox extends Component {
       created_at: Date.now()
     }
     this.concatMessages(newMessage)
-    // this.setState({
-    //   messageArray: [...messageArray, newMessage]
-    // })
   }
   render() {
     const { messageArray } = this.state;

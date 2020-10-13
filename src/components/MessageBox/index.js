@@ -11,7 +11,6 @@ class MessageBox extends Component {
 
   componentWillReceiveProps(newProps) {
     this.setState({messages: newProps.messages});
-    console.log(newProps.messages)
   }
 
   render() {
@@ -22,18 +21,19 @@ class MessageBox extends Component {
           height: window.innerHeight - 100,
           width: "100%",
           borderRadius: 10,
-          backgroundColor: '#EFF2F5'
+          backgroundColor: '#fff',
+          overflow: 'scroll'
         }}
       >
       
         {messages.map(element => {
           if(element.from === "user") {
             return(
-              <UserMessage message={element} />
+              <UserMessage key={element.id} message={element} />
             )
           }
           return (
-            <BotMessage message={element} />
+            <BotMessage key={element.id} message={element} />
           )
         })}
       </div>
