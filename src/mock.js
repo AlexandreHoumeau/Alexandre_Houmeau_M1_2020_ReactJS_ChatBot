@@ -20,6 +20,11 @@ const Bot = [
         title: "devise",
         keyWords: ["devise"],
         response: () => "Si vous ne réussissez pas du premier coup, appelez ça « version 1.0 »."
+      },
+      {
+        title: "help",
+        keyWords: ["help"],
+        response: () => "Les commandes disponibles sont: '/heure', '/hour', '/time': pour afficher l'heure \n 'devise': pour connaitre les devises des bots."
       }
     ]
   },
