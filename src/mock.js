@@ -3,7 +3,7 @@ const Bot = [
     id: "1",
     name: "Bot1",
     avatar:
-      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/theory-1552510536.jpg?crop=0.501xw:1.00xh;0.0173xw,0&resize=480:*",
+      "https://i.pinimg.com/originals/2c/8b/ed/2c8bed2ea157922ca65cf5f4ac98d43a.png",
     version: "1.0.0",
     description: "Salut je suis le Bot 1",
     actions: [
@@ -19,7 +19,12 @@ const Bot = [
       {
         title: "devise",
         keyWords: ["devise"],
-        response: () => "L'hiver arrive"
+        response: () => "Si vous ne réussissez pas du premier coup, appelez ça « version 1.0 »."
+      },
+      {
+        title: "help",
+        keyWords: ["help"],
+        response: () => "Les commandes disponibles sont: '/heure', '/hour', '/time': pour afficher l'heure \n 'devise': pour connaitre les devises des bots."
       }
     ]
   },
@@ -27,13 +32,13 @@ const Bot = [
     id: "2",
     name: "Bot2",
     avatar:
-      "https://www.my-citations.com/images/auteurs/114_tyrion-lannister_s.jpeg",
+      "https://cdn.dribbble.com/users/79449/screenshots/14019420/bot_4x.png",
     version: "1.0.0",
     description: "Salut je suis le Bot 2",
     actions: [
       {
         keyWords: ["devise"],
-        response: () => "Un Lannister paye toujours ses dettes"
+        response: () => "Il y a 10 types de personnes dans le monde : celles qui comprennent le binaire, et celles qui ne le comprennent pas."
       }
     ]
   }
