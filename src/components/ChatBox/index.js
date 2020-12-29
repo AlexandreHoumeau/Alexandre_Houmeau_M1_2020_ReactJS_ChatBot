@@ -7,8 +7,8 @@ class ChatBox extends Component {
     super(props);
     this.state = {
       messageArray: [{
-        id: Math.floor(Math.random() * Math.floor(1000)),
-        content: "Hello new User",
+        id: Math.floor(Math.random() * Math.floor(10000)),
+        content: "Bonjour, nouvel utilisteur. Vous pouvez taper la commande 'help' pour afficher les différentes options",
         from: 'bot',
         created_at: Date.now()
       }]
@@ -26,10 +26,14 @@ class ChatBox extends Component {
   }
 
   botResponse(message) {
-    Bot.forEach(element => {
-      const res = this.findActions(element, message)
+    Bot.forEach(async(element) => {
+      const res = await this.findActions(element, message)
       if(res[0]) {
-        this.botMessage(element, res[0])
+        if(res[0][0] === "jokes") {
+          this.botMessage(element, await this.fetchJokes())
+        } else {
+          this.botMessage(element, res[0])
+        }
       }
     })
   }
@@ -44,24 +48,34 @@ class ChatBox extends Component {
       from: 'bot',
       created_at: Date.now()
     }
-
     setTimeout(() => {
       this.concatMessages(newMessage)
       this.props.getMessage(newMessage)
     }, 1000)
   }
 
-  concatMessages(newMessage) {
+  async fetchJokes() {
+    return fetch("http://api.icndb.com/jokes/random")
+      .then(response => response.json())
+      .then(data => {
+        return [data.value.joke]
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  async concatMessages(newMessage) {
     const { messageArray } = this.state;
     this.setState({
-      messageArray: messageArray.concat(newMessage)
+      messageArray: await messageArray.concat(newMessage)
     })
   }
 
-  getMessage(message) {
+  async getMessage(message) {
     this.botResponse(message)
     const newMessage = {
-      id: Math.floor(Math.random() * Math.floor(1000)),
+      id: Math.floor(Math.random() * Math.floor(10000)),
       content: message,
       from: 'user',
       created_at: Date.now()

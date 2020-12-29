@@ -17,8 +17,9 @@ class UserMessage extends Component {
     const { message } = this.props;
     return (
       <Grid ref={this.message} container >
-        <Grid item xs={9} />
+        <Grid  item xs={9} />
         <Grid
+          container
           className="message_container"
           item
           xs={3}

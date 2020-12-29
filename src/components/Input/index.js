@@ -34,7 +34,7 @@ class Input extends Component {
           </Grid>
           <Grid item xs={3}>
             <Button onClick={(value) => {this.handleSubmit(value)}}  variant="contained" color="primary">
-              Primary
+              Envoyer
             </Button>
           </Grid>
         </Grid>
