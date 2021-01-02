@@ -26,7 +26,7 @@ const Bot = [
         title: "help",
         keyWords: ["help", "help "],
         response: () =>
-          'Les commandes disponibles sont: \n- "/heure", "/hour", "/time": pour afficher l"heure - "devise": pour connaitre les devises des bots. \n- "blague": pour afficher une blague aléatoire sur Chuck Norris (en anglais)'
+          'Les commandes disponibles sont: \n- "/heure", "/hour", "/time": pour afficher l"heure - "devise": pour connaitre les devises des bots. \n- "blague": pour afficher une blague aléatoire sur Chuck Norris (en anglais) - "infos": Pour avoir des informations sur le créateur - "bonjour": Pour être salué'
       }
     ]
   },
@@ -46,6 +46,10 @@ const Bot = [
       {
         keyWords: ["blague"],
         response: () => "jokes"
+      },
+      {
+        keyWords: ["hello", "bonjour", "salut"],
+        response: () => "Saluuuut j'espère que ça va !"
       }
     ]
   },
@@ -60,11 +64,14 @@ const Bot = [
         keyWords: ["devise"],
         response: () =>
           "Mes logiciels n’ont jamais de bug. Ils développent juste certaines fonctions aléatoires."
+      },
+      {
+        keyWords: ["infos", "infos "],
+        response: () =>
+          "Crée par Alexandre Houmeau, étudiant en M1 à myDigitalSchool. Actuellement en alternance en tant que développeur d'application mobile React Native chez Uptoo."
       }
     ]
   }
 ];
-
-
 
 export default Bot;

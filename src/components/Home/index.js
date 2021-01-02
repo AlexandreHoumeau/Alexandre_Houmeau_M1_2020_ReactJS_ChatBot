@@ -20,8 +20,8 @@ class Home extends Component {
   render() {
     const { arrayMessage } = this.state;
     return (
-      <Grid container spacing={3}>
-        <Grid item xs={3}>
+      <Grid container spacing={3} >
+        <Grid item xs={3} style={{height: "100vh"}}>
           <BotList message={arrayMessage} />
         </Grid>
         <Grid item xs={9}>

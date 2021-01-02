@@ -27,7 +27,7 @@ class BotMessage extends Component {
               {message.content}
             </p>
             <small style={{ color: "black" }}>
-              {moment(message.created_at).fromNow()}
+              {moment(message.created_at).format('LT')}
             </small>
           </div>
         </Grid>

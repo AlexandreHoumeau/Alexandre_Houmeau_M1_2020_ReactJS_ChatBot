@@ -30,7 +30,7 @@ class UserMessage extends Component {
               {message.content}
             </p>
             <small style={{ color: "#fff" }}>
-              {moment(message.created_at).fromNow()}
+              {moment(message.created_at).format('LT')}
             </small>
         </div>
         <Avatar style={{marginRight: '10px'}} alt="Remy Sharp" src="" />
