@@ -20,14 +20,14 @@ class BotMessage extends Component {
         <Avatar style={{marginRight: '10px'}} alt="Remy Sharp" src={message.avatar} />
         <Grid
           item
-          xs={2}
+          xs={3}
         >
           <div className="bot_message">
             <p style={{ color: "black", textAlign: "left", margin: 5 }}>
               {message.content}
             </p>
             <small style={{ color: "black" }}>
-              {moment(message.created_at).fromNow()}
+              {moment(message.created_at).format('LT')}
             </small>
           </div>
         </Grid>

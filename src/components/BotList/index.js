@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
@@ -27,7 +26,7 @@ class BotList extends Component {
     return (
       <List style={{ backgroundColor: "#EFF2F5", height: "100%" }}>
         {Data.map(element => (
-          <>
+          <div key={element.id}>
             <ListItem
               style={{ backgroundColor: "#fff" }}
               alignItems="flex-start"
@@ -51,8 +50,9 @@ class BotList extends Component {
                 }
               />
             </ListItem>
-            <Divider variant="inset" component="li" />
-          </>
+            <div style={{height: 1, width: '100%', backgroundColor: "#CECECE"}}/>
+            {/* <Divider variant="inset" component="li" /> */}
+          </div>
         ))}
       </List>
     );

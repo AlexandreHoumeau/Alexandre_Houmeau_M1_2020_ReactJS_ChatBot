@@ -17,8 +17,9 @@ class UserMessage extends Component {
     const { message } = this.props;
     return (
       <Grid ref={this.message} container >
-        <Grid item xs={9} />
+        <Grid  item xs={9} />
         <Grid
+          container
           className="message_container"
           item
           xs={3}
@@ -29,7 +30,7 @@ class UserMessage extends Component {
               {message.content}
             </p>
             <small style={{ color: "#fff" }}>
-              {moment(message.created_at).fromNow()}
+              {moment(message.created_at).format('LT')}
             </small>
         </div>
         <Avatar style={{marginRight: '10px'}} alt="Remy Sharp" src="" />

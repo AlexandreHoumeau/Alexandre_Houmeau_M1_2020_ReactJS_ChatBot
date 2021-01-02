@@ -28,13 +28,13 @@ class Input extends Component {
     const { text } = this.state;
     return (
       <form onSubmit={(value) => {this.handleSubmit(value)}} autoComplete="off">
-        <Grid container>
+        <Grid container style={{justifyContent: 'space-around', alignItems: 'center'}}>
           <Grid item xs={9}>
-            <TextField fullWidth onChange={(value) => {this.onChangeText(value)}} value={text} id="standard-basic" label="Standard" />
+            <TextField style={{color: '#1096F5', borderColor: '#1096F5'}} placeholder="Ecrivez une commande" label="Ecrivez un message" variant="outlined" fullWidth onChange={(value) => {this.onChangeText(value)}} value={text} id="standard-basic" />
           </Grid>
-          <Grid item xs={3}>
-            <Button onClick={(value) => {this.handleSubmit(value)}}  variant="contained" color="primary">
-              Primary
+          <Grid item xs={1}>
+            <Button style={{backgroundColor: '#1096F5'}} onClick={(value) => {this.handleSubmit(value)}}  variant="contained" color="primary">
+              Envoyer
             </Button>
           </Grid>
         </Grid>
